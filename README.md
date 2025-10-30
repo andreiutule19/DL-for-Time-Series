@@ -1,4 +1,4 @@
-# TSA4 — Time Series Analysis (Notebook Overview)
+# Deep Learning for Time Series 
 
 This README accompanies the `TSA4.ipynb` notebook in this workspace. It provides a high-level, descriptive walkthrough of the methods, modeling choices, and the analysis pipeline used in the notebook. The goal of the notebook is to explore, model, and evaluate forecasting and anomaly-detection techniques on a time series dataset (`ELECTRIC.csv`) using deep learning models and classical approaches.
 
