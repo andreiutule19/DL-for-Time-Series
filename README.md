@@ -18,11 +18,12 @@ The repository contains model artifacts and visualizations:
 - `best_tcn_model.pth` — best TCN weights found during training.
 - `images/` — contains plotting artifacts used in the notebook.
 
+
 Included images (referenced below):
 
 - `images/LSTM forecasting.png` — LSTM model forecast vs. ground truth (training/validation/test split visualizations).
 - `images/TCN forecasting.png` — TCN model forecast visualization.
-- `images/generative adversarial networks.png` — visualization showing GAN-based synthetic time series experiments or GAN outputs used to augment/training/benchmark.
+- `images/generative adversarial networks.png` — visualization illustrating GAN-based anomaly-detection experiments (e.g., reconstruction / discriminator-based anomaly scores and detected anomalies).
 - `images/isolation forest for anomaly detection.png` — anomaly detection visualization using an Isolation Forest (classical unsupervised method) with detected anomalies highlighted.
 
 (If an image does not display in your viewer, check spaces in filenames or open via your file manager — the images are in the `images/` folder.)
@@ -75,8 +76,8 @@ Why LSTM: LSTMs capture long-term dependencies in sequences via gating mechanism
 Why TCN: TCNs often match or outperform RNNs on sequence modeling tasks while being easier to parallelize and sometimes more stable to train.
 
 3) Additional experiments
-- GAN-based synthetic augmentation: the notebook includes experiments with a generative adversarial approach to create synthetic time series to augment training or to test robustness (see `images/generative adversarial networks.png`).
-- Classical anomaly detection: Isolation Forest-based anomaly detection is used for a complementary unsupervised approach and visualized in `images/isolation forest for anomaly detection.png`.
+- GAN-based anomaly detection: the notebook includes experiments using generative adversarial networks for anomaly detection — for example, using reconstruction error or discriminator scores to flag anomalous segments (see `images/generative adversarial networks.png`).
+- Classical anomaly detection: Isolation Forest-based anomaly detection is used as a complementary unsupervised baseline and is visualized in `images/isolation forest for anomaly detection.png`.
 
 ## Training procedure (typical setup)
 
@@ -115,7 +116,7 @@ Qualitative evaluation:
 
 - `images/TCN forecasting.png`: Same conceptual layout for the TCN model. Compare TCN vs LSTM in terms of sharpness of peaks, phase alignment, and smoothness of predictions.
 
-- `images/generative adversarial networks.png`: Visual outputs from GAN experiments. These show synthetic sequences compared to real sequences or illustrate how synthetic samples expand the training distribution.
+-- `images/generative adversarial networks.png`: Visual outputs from GAN-based anomaly-detection experiments. These illustrate typical anomaly signals (reconstruction residuals, discriminator scores, or flagged sequences) used to identify outliers in the series.
 
 - `images/isolation forest for anomaly detection.png`: Shows detected outliers colored/highlighted on the original timeseries. Isolation Forest is an unsupervised tree-based method that isolates anomalies by random partitioning; its visual outputs help identify segments that deviate from normal behavior.
 
@@ -130,7 +131,7 @@ Qualitative evaluation:
 
 - Model comparison: LSTM and TCN both offer strengths. LSTMs are powerful for capturing long-term dependencies with gating, while TCNs usually train faster and handle long contexts through dilations. The notebook documents differences in forecasting quality and training behavior.
 - Data quality matters: missing data, non-stationarity, and rare events materially affect forecasting models. Preprocessing and careful window design are crucial.
-- Synthetic augmentation (GANs) and classical anomaly detection methods provide complementary perspectives: GANs can help with model robustness under data scarcity; Isolation Forests provide quick unsupervised anomaly baselines.
+-- GANs and classical anomaly detection methods provide complementary perspectives: here GANs were applied for anomaly detection (e.g., via reconstruction/discriminator signals) while Isolation Forests serve as a fast unsupervised baseline.
 
 ## LSTM Forecasting
 ![Error for LSTM forecasting](images/Error%20for%20LSTM%20forecasting.png)
