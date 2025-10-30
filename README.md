@@ -132,18 +132,14 @@ Qualitative evaluation:
 - Data quality matters: missing data, non-stationarity, and rare events materially affect forecasting models. Preprocessing and careful window design are crucial.
 - Synthetic augmentation (GANs) and classical anomaly detection methods provide complementary perspectives: GANs can help with model robustness under data scarcity; Isolation Forests provide quick unsupervised anomaly baselines.
 
-## Next steps (suggested, optional)
+## LSTM Forecasting
+![Error for LSTM forecasting](images/Error%20for%20LSTM%20forecasting.png)
 
-- Hyperparameter search: systematic grid or Bayesian search over lookback length, learning rate, and model size.
-- Ensembling multiple models (LSTM + TCN + simple rolling baseline) to reduce variance.
-- Probabilistic forecasting: consider models that directly predict prediction intervals (e.g., quantile regression or Bayesian RNNs).
-- More robust evaluation against event-based metrics if anomaly detection is a priority.
+## TCN Forecasting
+![Error for TCN forecasting](images/error%20for%20TCN%20forecasting.png)
 
-## Contact / provenance
+## GAN Model
+![Generative Adversarial Networks](images/generative%20adversarial%20networks.png)
 
-This README was generated to document the methods and artifacts in the `TSA4.ipynb` notebook. For code-level questions or to request additional explanation on a particular cell or figure, open the notebook and inspect the corresponding code cell and markdown commentary.
-
----
-
-Completion summary:
-- A descriptive README was created for the `TSA4.ipynb` notebook and repository artifacts. It references image artifacts in the `images/` folder and describes the data processing, model choices (LSTM/TCN), training loop, and evaluation strategy.
+## Isolation Forest
+![Isolation Forest for Anomaly Detection](images/isolation%20forest%20for%20anomaly%20detection.png)
